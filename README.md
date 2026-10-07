@@ -1,6 +1,8 @@
-# mod-all-specializations
+# mod-profession-specializations
 
-AzerothCore module: players learn **every** specialization of a profession instead of choosing one.
+AzerothCore module: players learn **every** crafting profession specialization (Engineering, Blacksmithing, Leatherworking, Tailoring, Alchemy) instead of choosing one.
+
+Formerly `mod-all-specializations`. Talent specializations are not affected.
 
 | Profession | Specializations | Skill | Level |
 |---|---|---|---|
@@ -31,12 +33,12 @@ On a mod-individual-progression server, the 325-skill specializations (Tailoring
 
 ## Configuration
 
-`conf/mod_all_specializations.conf.dist`:
+`conf/mod_profession_specializations.conf.dist`:
 
 | Key | Default | Meaning |
 |-----|---------|---------|
-| `AllSpecializations.Enable` | 1 | Master switch |
-| `AllSpecializations.Announce` | 1 | Chat message listing newly learned specializations |
+| `ProfessionSpecializations.Enable` | 1 | Master switch |
+| `ProfessionSpecializations.Announce` | 1 | Chat message listing newly learned specializations |
 
 ## Requirements
 
@@ -48,17 +50,17 @@ On a mod-individual-progression server, the 325-skill specializations (Tailoring
 
 ```bash
 cd modules
-git clone https://github.com/buildthehomelab/wow-mod-all-specializations.git mod-all-specializations
+git clone https://github.com/buildthehomelab/wow-mod-profession-specializations.git mod-profession-specializations
 # CMake reconfigure + rebuild
 ```
 
-Clone into `mod-all-specializations`: AzerothCore derives the loader symbol from the folder name.
+Clone into `mod-profession-specializations`: AzerothCore derives the loader symbol from the folder name.
 
 ## Troubleshooting
 
-- **A specialization didn't appear:** the character has to meet the skill and level in the table above, and `AllSpecializations.Enable` has to be `1`. The check runs on login, on level-up and on skill changes, so log in again or gain a skill point.
+- **A specialization didn't appear:** the character has to meet the skill and level in the table above, and `ProfessionSpecializations.Enable` has to be `1`. The check runs on login, on level-up and on skill changes, so log in again or gain a skill point.
 - **Recipes vanished after unlearning at a trainer:** the specialization comes back at the next login or skill-up, but the recipes the trainer removed have to be trained again.
-- **Server won't start or the module isn't loaded:** the folder must be named `mod-all-specializations`. AzerothCore derives the loader symbol from the folder name.
+- **Server won't start or the module isn't loaded:** the folder must be named `mod-profession-specializations`. AzerothCore derives the loader symbol from the folder name.
 
 ## Credits
 
