@@ -38,7 +38,13 @@ On a mod-individual-progression server, the 325-skill specializations (Tailoring
 | `AllSpecializations.Enable` | 1 | Master switch |
 | `AllSpecializations.Announce` | 1 | Chat message listing newly learned specializations |
 
-## Install
+## Requirements
+
+- AzerothCore (wotlk, master branch).
+- A WoW 3.3.5a (12340) client. No client patch and no SQL.
+- Optional: [mod-individual-progression](https://github.com/ZhengPeiRu21/mod-individual-progression). On such a server the 325-skill specializations (Tailoring, Alchemy) wait for the TBC tier.
+
+## Installation
 
 ```bash
 cd modules
@@ -48,6 +54,16 @@ git clone https://github.com/buildthehomelab/wow-mod-all-specializations.git mod
 
 Clone into `mod-all-specializations`: AzerothCore derives the loader symbol from the folder name.
 
+## Troubleshooting
+
+- **A specialization didn't appear:** the character has to meet the skill and level in the table above, and `AllSpecializations.Enable` has to be `1`. The check runs on login, on level-up and on skill changes, so log in again or gain a skill point.
+- **Recipes vanished after unlearning at a trainer:** the specialization comes back at the next login or skill-up, but the recipes the trainer removed have to be trained again.
+- **Server won't start or the module isn't loaded:** the folder must be named `mod-all-specializations`. AzerothCore derives the loader symbol from the folder name.
+
+## Credits
+
+Author: [buildthehomelab](https://github.com/buildthehomelab)
+
 ## License
 
-MIT (see [LICENSE](LICENSE)).
+MIT. See [LICENSE](LICENSE).
