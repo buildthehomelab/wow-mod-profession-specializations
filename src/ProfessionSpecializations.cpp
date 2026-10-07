@@ -1,5 +1,5 @@
 /*
- * mod-all-specializations
+ * mod-profession-specializations
  *
  * Teaches every specialization of a profession (Gnomish + Goblin Engineering, Armorsmith +
  * Weaponsmith and the three weapon masteries, all Leatherworking, Tailoring and Alchemy specs)
@@ -115,22 +115,22 @@ namespace
     }
 }
 
-class AllSpecializationsWorldScript : public WorldScript
+class ProfessionSpecializationsWorldScript : public WorldScript
 {
 public:
-    AllSpecializationsWorldScript() : WorldScript("AllSpecializationsWorldScript") { }
+    ProfessionSpecializationsWorldScript() : WorldScript("ProfessionSpecializationsWorldScript") { }
 
     void OnAfterConfigLoad(bool /*reload*/) override
     {
-        config.enabled  = sConfigMgr->GetOption<bool>("AllSpecializations.Enable", true);
-        config.announce = sConfigMgr->GetOption<bool>("AllSpecializations.Announce", true);
+        config.enabled  = sConfigMgr->GetOption<bool>("ProfessionSpecializations.Enable", true);
+        config.announce = sConfigMgr->GetOption<bool>("ProfessionSpecializations.Announce", true);
     }
 };
 
-class AllSpecializationsPlayerScript : public PlayerScript
+class ProfessionSpecializationsPlayerScript : public PlayerScript
 {
 public:
-    AllSpecializationsPlayerScript() : PlayerScript("AllSpecializationsPlayerScript",
+    ProfessionSpecializationsPlayerScript() : PlayerScript("ProfessionSpecializationsPlayerScript",
         { PLAYERHOOK_ON_LOGIN, PLAYERHOOK_ON_LEVEL_CHANGED, PLAYERHOOK_ON_UPDATE_SKILL, PLAYERHOOK_ON_SET_SKILL }) { }
 
     // Existing characters that already qualify, and anyone who unlearned one at a trainer.
@@ -159,8 +159,8 @@ public:
     }
 };
 
-void AddAllSpecializationsScripts()
+void AddProfessionSpecializationsScripts()
 {
-    new AllSpecializationsWorldScript();
-    new AllSpecializationsPlayerScript();
+    new ProfessionSpecializationsWorldScript();
+    new ProfessionSpecializationsPlayerScript();
 }

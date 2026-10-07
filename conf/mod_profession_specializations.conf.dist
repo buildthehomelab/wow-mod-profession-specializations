@@ -1,25 +1,25 @@
 [worldserver]
 
 ########################################
-# mod-all-specializations
+# mod-profession-specializations
 #
 # Players learn every specialization of a profession once they meet the stock requirements,
 # instead of picking one. No client patch.
 ########################################
 
 #
-#    AllSpecializations.Enable
+#    ProfessionSpecializations.Enable
 #        Description: Master switch. With 0, nothing is taught; specializations already learned
 #                     stay learned.
 #        Default:     1
 #
 
-AllSpecializations.Enable = 1
+ProfessionSpecializations.Enable = 1
 
 #
-#    AllSpecializations.Announce
+#    ProfessionSpecializations.Announce
 #        Description: Tell the player in chat which specializations they just learned.
 #        Default:     1
 #
 
-AllSpecializations.Announce = 1
+ProfessionSpecializations.Announce = 1
